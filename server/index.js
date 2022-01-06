@@ -2,6 +2,9 @@
 const express = require('express')
 const cors = require('cors')
 
+//HANDLER FUNCTIONS
+const {getRaces} = require('./controllers/raceController')
+
 //INVOCATIONS
 const app = express()
 
@@ -9,6 +12,8 @@ const app = express()
 app.use(express.json())
 app.use(cors())
 
+//RACES
+app.get('/api/races', (getRaces))
 
 
 
