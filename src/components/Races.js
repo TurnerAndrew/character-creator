@@ -1,6 +1,7 @@
 import {React, useState, useEffect} from 'react'
 import axios from 'axios'
 import Race from './Race'
+import {Link} from 'react-router-dom'
 
 const Main = () => {
 
@@ -11,12 +12,20 @@ const Main = () => {
         axios.get(`${baseURL}/races`).then(res => setRaces(res.data.results))
     }, [])
 
-    const raceDisplay = races.map(race => <Race race={race}/>)
     console.log(races)
+
+    const racesMapped = races.map(race => {
+        return <div>
+            <Link to={Race}>
+                 <h3>{race.name}</h3>
+            </Link>
+               </div>
+        })
+
 
     return (
         <div>
-            {raceDisplay}
+            {racesMapped}
         </div>
     )
 }

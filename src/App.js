@@ -1,10 +1,10 @@
 import './App.css';
-import Races from './components/Races';
+import Routes from './Routes'
 
 function App() {
   return (
     <div className="App">
-     <Races/>
+     {Routes}
     </div>
   );
 }
