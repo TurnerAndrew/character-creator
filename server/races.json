@@ -2,54 +2,63 @@
 	"races": [
     {
         "name": "Dragonborn",
+        "index": "dragonborn",
         "description": "Dragonborn look very much like dragons standing erect in humanoid form, though they lack wings or a tail.",
         "img": "https://www.dndbeyond.com/avatars/thumbnails/6/340/420/618/636272677995471928.png",
         "url": "http://dnd5eapi.co/api/races/dragonborn"
     },
     {
         "name": "Dwarf",
+        "index": "dwarf",
         "description": "Bold and hardy, dwarves are known as skilled warriors, miners and workers of stone and metal.",
         "img": "https://www.dndbeyond.com/avatars/thumbnails/6/254/420/618/636271781394265550.png",
         "url": "http://dnd5eapi.co/api/races/dwarf"
     },
     {
         "name": "Elf",
+        "index": "elf",
         "description": "Elves are magical people of otherworldly grace, living in the world but not entirely part of it.",
         "img": "https://www.dndbeyond.com/avatars/thumbnails/7/639/420/618/636287075350739045.png",
         "url": "http://dnd5eapi.co/api/races/elf"
     },
     {
         "name": "Gnome",
+        "index": "gnome",
         "description": "A gnome's energy and enthusiasm for living shines through every inch of his or her tiny body.",
         "img": "https://www.dndbeyond.com/avatars/thumbnails/6/334/420/618/636272671553055253.png",
         "url": "http://dnd5eapi.co/api/races/gnome"
     },
     {
         "name": "Half-Elf",
+        "index": "half-elf",
         "description": "Half-elves combine what some say are the best qualities of their elf and human parents.",
         "img": "https://www.dndbeyond.com/avatars/thumbnails/6/481/420/618/636274618102950794.png",
         "url": "http://dnd5eapi.co/api/races/half-elf"
     },
     {
         "name": "Halfling",
+        "index": "halfling",
         "description": "The diminutive halflings survive in a world full of larger creatures by avoiding notice or, barring that, avoiding offense.",
         "img": "https://www.dndbeyond.com/avatars/thumbnails/6/256/420/618/636271789409776659.png",
         "url": "http://dnd5eapi.co/api/races/halfling"
     },
     {
         "name": "Half-Orc",
+        "index": "half-orc",
         "description": "Half-orcs' grayish pigmentation, sloping foreheads, jutting jaws, prominent teeth, and towering builds make their orcish heritage plain for all to see.",
         "img": "https://www.dndbeyond.com/avatars/thumbnails/6/466/420/618/636274570630462055.png",
         "url": "http://dnd5eapi.co/api/races/half-orc"
     },
     {
         "name": "Human",
+        "index": "human",
         "description": "Humans are the most adaptable and ambitious people among the common races.  Whatever drives them, humans are the innovators, the achievers, and the pioneers of the worlds.",
         "img": "https://www.dndbeyond.com/avatars/thumbnails/6/258/420/618/636271801914013762.png",
         "url": "http://dnd5eapi.co/api/races/human"
     },
     {
         "name": "Tiefling",
+        "index": "tiefling",
         "description": "To be greeted with stares and whispers, to suffer violence and insult on the street, to see mistrust and fear in every eye: this is the lot of tiefling.",
         "img": "https://www.dndbeyond.com/avatars/thumbnails/7/641/420/618/636287076637981942.png",
         "url": "http://dnd5eapi.co/api/races/tiefling"

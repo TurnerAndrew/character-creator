@@ -1,24 +1,30 @@
 import axios from "axios"
 import { useEffect, useState } from "react"
 import {Link} from 'react-router-dom'
+import RaceDetails from './RaceDetails'
 
 const Race = (props) => {
-    const {race} = props
-    const [details, setDetails] = useState()
+    
+    const {img, name, description, url} = props.race
+    console.log(img, name)
     
     useEffect(() => {
-        axios.get(`http://www.dnd5eapi.co/api/races/${race.toLowerCase()}`).then(res => setDetails(res.data))
-    },[race])
+        
+    },[])
 
     
-    console.log(details)
+    
 
     return (
         <div>
             <div>
-                <h3>{race.name}</h3> 
-                             
-            
+                <h3>{name}</h3>
+                <p>{description}</p>
+                <img src={img} alt=''/>
+                <Link to={RaceDetails}>
+                    <button>More Info</button>
+                </Link>                             
+                <button>Select {name}</button>
             </div>      
         </div>
     )

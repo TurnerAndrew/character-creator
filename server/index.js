@@ -13,7 +13,7 @@ app.use(express.json())
 app.use(cors())
 
 //RACES
-app.get('/api/races', (getRaces))
+app.get('/api/races', getRaces)
 
 
 
