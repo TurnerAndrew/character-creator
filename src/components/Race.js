@@ -2,31 +2,29 @@ import axios from "axios"
 import { useEffect, useState } from "react"
 import {Link} from 'react-router-dom'
 import RaceDetails from './RaceDetails'
+import '../styles/race.css'
 
 const Race = (props) => {
     
     const {img, name, description, url} = props.race
-    console.log(img, name)
     
     useEffect(() => {
         
-    },[])
-
-    
+    },[])    
     
 
     return (
-        <div>
-            <div>
-                <h3>{name}</h3>
-                <p>{description}</p>
-                <img src={img} alt=''/>
-                <Link to={RaceDetails}>
-                    <button>More Info</button>
-                </Link>                             
-                <button>Select {name}</button>
-            </div>      
-        </div>
+        <div id='race-overview'>
+            <h3 id='race-name'>{name}</h3>
+            <img src={img} alt='' id='race-img'/>
+            <p id='race-description'>{description}</p>
+            <div id='btn-container'>
+            <Link to={`/races/${name}`}>
+                <button className='race-button'>More Info</button>
+            </Link>                             
+            <button className ='race-button'>Select {name}</button>
+            </div>
+        </div>       
     )
 }
 

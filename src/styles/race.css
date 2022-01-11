@@ -1,0 +1,30 @@
+#race-overview {
+    width: 15vw;
+    height: 30vh;
+    display: flex; 
+    flex-direction: column; 
+    justify-content: space-evenly;
+    align-items: center;
+    border: solid 1px black;
+    margin: 1.5vw;
+    padding: 1.5vw;
+} 
+
+#race-description {
+}
+
+#race-name {
+}
+
+#race-img {
+   
+}
+
+.race-button {
+    width: 3vw;
+    height: 2.5vh;
+    background-color: transparent;
+    color: white;
+    border: solid 1px black;
+    background-color: maroon;
+}
