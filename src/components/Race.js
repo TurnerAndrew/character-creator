@@ -19,10 +19,10 @@ const Race = (props) => {
             <img src={img} alt='' id='race-img'/>
             <p id='race-description'>{description}</p>
             <div id='btn-container'>
-            <Link to={`/races/${name}`}>
-                <button className='race-button'>More Info</button>
-            </Link>                             
-            <button className ='race-button'>Select {name}</button>
+                <Link to={`/races/${name}`}>
+                    <button className='race-button'>More</button>
+                </Link>                             
+                <button className ='race-button'>Select</button>
             </div>
         </div>       
     )
