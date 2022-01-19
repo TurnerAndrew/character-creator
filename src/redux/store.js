@@ -1,4 +1,6 @@
 import { createStore } from 'redux'
-import characterReducer from './characterReducer'
+import characterReducer from './reducers/characterReducer'
 
-export default createStore(characterReducer)
+const store = createStore(characterReducer)
+
+export default store

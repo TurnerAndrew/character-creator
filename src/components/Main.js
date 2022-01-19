@@ -14,7 +14,7 @@ const Main = () => {
     const racesMapped = races.map(race => {
         
         return <div key={race.index}>
-                <Race race={race}/>
+                <Race details={race}/>
                </div>
         })
 
