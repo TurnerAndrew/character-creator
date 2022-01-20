@@ -7,12 +7,12 @@ import {Link} from 'react-router-dom'
 const Main = () => {
 
     let [races, setRaces] = useState([])
+
     useEffect(() => {
         axios.get(`/api/races`).then(res => setRaces(res.data.races))
     }, [])
 
-    const racesMapped = races.map(race => {
-        
+    const racesMapped = races.map(race => {        
         return <div key={race.index}>
                 <Race details={race}/>
                </div>
@@ -26,3 +26,4 @@ const Main = () => {
 }
 
 export default Main
+

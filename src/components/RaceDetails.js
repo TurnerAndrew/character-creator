@@ -1,26 +1,32 @@
 import axios from 'axios'
 import React, { useEffect, useState } from 'react'
 import {useParams} from 'react-router-dom'
+import { connect } from 'react-redux'
+import { selectRace } from '../redux/reducers/characterReducer'
+import Traits from './Traits'
 
-const RaceDetails = () => {
+const RaceDetails = (props) => {
     let {name} = useParams()
     let [details, setDetails] = useState({})
     let [img, setImg] = useState({})
     
+    const selectRace = () => {
+        props.selectRace(name)
+    }
+
     useEffect(() => {
         axios.get(`https://www.dnd5eapi.co/api/races/${name.toLowerCase()}`).then(res => setDetails(res.data))
-        axios.get(`/api/races`).then(res => setImg(res.data.races.filter(race => race.name.toLowerCase() === name.toLowerCase())))
+        axios.get(`/api/races`).then(res => setImg(res.data.races.filter(race => race.name.toLowerCase() === name.toLowerCase())[0].img))
     }, [])
 
+    
     const { ability_bonuses : bonuses,
-            starting_proficiencies : proficiencies,
-            languages,
-            traits } = details
-
+        starting_proficiencies : proficiencies,
+        traits } = details
+        
     
     let bonusesMapped
     let proficienciesMapped
-    let languagesMapped
     let traitsMapped
     
     if (bonuses) bonusesMapped = bonuses.map(ability => {
@@ -35,15 +41,10 @@ const RaceDetails = () => {
         </div>
     })
 
-    // if (languages) languagesMapped = languages.map(language => {
-    //     return <div key={language.index}>
-    //         <p>{language.name}</p>
-    //     </div>
-    // })
 
     if (traits) traitsMapped = traits.map(trait => {
         return <div key={trait.index}>
-            <p>{trait.name}</p>
+            <Traits name={trait.index}/>
         </div>
     })
 
@@ -51,20 +52,47 @@ const RaceDetails = () => {
     return (
         <div>
             <h1>{details.name}</h1>
+            <br></br>
+            <br></br>
             <p>Movement Speed: {details.speed}</p>
+            <br></br>
+            <br></br>
             {bonusesMapped}
+            <br></br>
+            <br></br>
             <p>{details.age}</p>
+            <br></br>
+            <br></br>
             <p>{details.alignment}</p>
+            <br></br>
+            <br></br>
             <p>{details.size_description}</p>
+            <br></br>
+            <br></br>
             {proficienciesMapped}
+            <br></br>
+            <br></br>
             {/* {languagesMapped} */}
             <p>{details.language_desc}</p>
+            <br></br>
+            <br></br>
             {traitsMapped}
-            <img src={img[0].img}/>
-            <button>Select {name}</button>
+            <br></br>
+            <br></br>
+            <img src={img}/>
+            <br></br>
+            <br></br>
+            <button onClick={selectRace}>Select {name}</button>
 
         </div>
     )
 }
 
-export default RaceDetails
+const mapStateToProps = (state, ownProps) => {
+    return {
+        race: state.race,
+        details: ownProps.details
+    }
+}
+
+export default connect(mapStateToProps, { selectRace })(RaceDetails)

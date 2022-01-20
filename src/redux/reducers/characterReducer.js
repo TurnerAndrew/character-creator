@@ -29,6 +29,7 @@ const characterReducer = (state = initialState, action) => {
     switch(action.type){
         case SELECT_RACE:
             const race = action.payload
+            console.log({...state, race: race})
             return {...state, race: race}
         default:
             return state
