@@ -1,6 +1,13 @@
-import React from 'react';
+
+import {Link} from 'react-router-dom'
+import { connect } from 'react-redux'
+import { selectClass } from '../redux/reducers/characterReducer'
 
 const Class = (props) => {
+
+    const selectClass = () => { 
+        props.selectClass(props.details.name)
+    }
 
     const { img, name, description } = props.details
 
@@ -13,12 +20,17 @@ const Class = (props) => {
                 <Link to={`/classes/${name}`}>
                     <button className='class-button'>More</button>
                 </Link>
-                <button className='class-button'>Select</button>
+                <button className='class-button' onClick={selectClass}>Select</button>
             </div>
         </div>
-    )
+    ) 
+}
 
-  return <div></div>;
-};
+const mapStateToProps = (state, ownProps) => {
+    return {
+        class: state.class,
+        details: ownProps.details
+    }
+}
 
-export default Class;
+export default connect(mapStateToProps, { selectClass})(Class)

@@ -1,6 +1,4 @@
-import axios from "axios"
-import { useEffect, useState } from "react"
-import {Link} from 'react-router-dom'
+import { Link } from 'react-router-dom'
 import { connect } from 'react-redux'
 import { selectRace } from '../redux/reducers/characterReducer'
 
@@ -8,11 +6,15 @@ import '../styles/race.css'
 
 const Race = (props) => {
 
-    const selectRace = () => {
-        props.selectRace(props.details.name)
+    // const navigate = useNavigate()
+
+    const selectRace = async () => {
+       await props.selectRace(props.details.name)
+    //    navigate('/classes')
+
     }
     
-    const {img, name, description, url} = props.details
+    const {img, name, description} = props.details
     
     return (
         <div id='race-overview'>
@@ -22,8 +24,10 @@ const Race = (props) => {
             <div id='btn-container'>
                 <Link to={`/races/${name}`}>
                     <button className='race-button'>More</button>
-                </Link>                             
-                <button className ='race-button' onClick={selectRace}>Select</button>
+                </Link>
+                <Link to={'/classes'}>
+                    <button className ='race-button' onClick={selectRace}>Select</button>
+                </Link>
             </div>
         </div>       
     )

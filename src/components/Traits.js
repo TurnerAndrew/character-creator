@@ -13,7 +13,7 @@ const Traits = (props) => {
     }, [])
 
   return <div>
-      <h1>{props.name}</h1>'
+      <h1>{props.name}</h1>
       <br></br>
       <br></br>
       <p>{traits}</p>

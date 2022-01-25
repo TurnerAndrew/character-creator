@@ -1,6 +1,6 @@
 import axios from 'axios'
 import React, { useEffect, useState } from 'react'
-import {useParams} from 'react-router-dom'
+import {useParams, Link} from 'react-router-dom'
 import { connect } from 'react-redux'
 import { selectRace } from '../redux/reducers/characterReducer'
 import Traits from './Traits'
@@ -15,8 +15,10 @@ const RaceDetails = (props) => {
     }
 
     useEffect(() => {
-        axios.get(`https://www.dnd5eapi.co/api/races/${name.toLowerCase()}`).then(res => setDetails(res.data))
-        axios.get(`/api/races`).then(res => setImg(res.data.races.filter(race => race.name.toLowerCase() === name.toLowerCase())[0].img))
+        axios.get(`https://www.dnd5eapi.co/api/races/${name.toLowerCase()}`)
+            .then(res => setDetails(res.data))
+        axios.get(`/api/races`)
+            .then(res => setImg(res.data.races.filter(race => race.name.toLowerCase() === name.toLowerCase())[0].img))
     }, [])
 
     
@@ -82,8 +84,9 @@ const RaceDetails = (props) => {
             <img src={img}/>
             <br></br>
             <br></br>
+            <Link to='/classes'>
             <button onClick={selectRace}>Select {name}</button>
-
+            </Link>
         </div>
     )
 }

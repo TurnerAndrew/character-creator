@@ -25,12 +25,23 @@ export const selectRace = (race) => {
     }
 }
 
+export const selectClass = (race) => {
+    return {
+        type: SELECT_CLASS,
+        payload: race
+    }
+}
+
 const characterReducer = (state = initialState, action) => {
     switch(action.type){
         case SELECT_RACE:
             const race = action.payload
             console.log({...state, race: race})
             return {...state, race: race}
+        case SELECT_CLASS:
+            const job = action.payload
+            console.log({...state, class: job})
+            return {...state, class: job}
         default:
             return state
     }
