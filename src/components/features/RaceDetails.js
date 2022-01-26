@@ -2,7 +2,7 @@ import axios from 'axios'
 import React, { useEffect, useState } from 'react'
 import {useParams, Link} from 'react-router-dom'
 import { connect } from 'react-redux'
-import { selectRace } from '../redux/reducers/characterReducer'
+import { selectRace } from '../../redux/reducers/characterReducer'
 import Traits from './Traits'
 
 const RaceDetails = (props) => {

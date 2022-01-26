@@ -1,8 +1,8 @@
 import { Link } from 'react-router-dom'
 import { connect } from 'react-redux'
-import { selectRace } from '../redux/reducers/characterReducer'
+import { selectRace } from '../../redux/reducers/characterReducer'
 
-import '../styles/race.css'
+import '../../styles/race.css'
 
 const Race = (props) => {
 

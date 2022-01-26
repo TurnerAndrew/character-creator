@@ -1,7 +1,7 @@
 import {React, useState, useEffect} from 'react'
-import '../styles/main.css'
 import axios from 'axios'
 import Race from './Race'
+import '../../styles/main.css'
 
 const Races = () => {
 
