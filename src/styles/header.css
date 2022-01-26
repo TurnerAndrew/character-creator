@@ -1,3 +1,8 @@
+*{
+    font-family: 'Tiamat Condensed SC Regular';
+    font-weight: 400;
+}
+
 ul {
     list-style: none;
 }
@@ -23,6 +28,10 @@ ul {
     display: flex;
     justify-content: space-evenly;
     align-items: flex-end;
+    font-family: 'Tiamat Condensed SC Regular';
+    font-size: larger;
+    font-weight: 400;
+    letter-spacing: .025em;
 }
 
 .nav-item {

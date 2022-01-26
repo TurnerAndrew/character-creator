@@ -9,10 +9,13 @@
     padding: 1.5vw;
     background-color: lightgray;
     border: solid #6D6A75 1px;
-    /* border-radius: 25px; */
+
 } 
 
 #race-description {
+    font-family: 'Open Sans';
+    font-size: 13px;
+    font-weight: 400;
     text-align: center;
 }
 
@@ -32,6 +35,8 @@
     border: none;
     border-radius: 2.5px;
     background-color: maroon;
+    font-weight: 200;
+    font-size: smaller;
 }
 
 #btn-container {

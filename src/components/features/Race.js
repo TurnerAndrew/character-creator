@@ -45,10 +45,10 @@ const Race = (props) => {
             <p id='race-description'>{description}</p>
             <div id='btn-container'>
                 <Link to={`/races/${name}`}>
-                    <button className='race-button'>More</button>
+                    <button className='race-button'>MORE</button>
                 </Link>
                 <Link to={'/classes'}>
-                    <button className ='race-button' onClick={submitRace}>Select</button>
+                    <button className ='race-button' onClick={submitRace}>SELECT</button>
                 </Link>
             </div>
         </div>       
