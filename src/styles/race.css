@@ -1,4 +1,4 @@
-#race-overview {
+#overview {
     width: 15vw;
     height: 35vh;
     display: flex; 
@@ -19,15 +19,7 @@
     text-align: center;
 }
 
-#race-name {
-    
-}
-
-#race-img {
-   max-width: 50%;
-}
-
-.race-button {
+.main-button {
     width: 5vw;
     height: 3vh;
     background-color: transparent;
@@ -37,6 +29,11 @@
     background-color: maroon;
     font-weight: 200;
     font-size: smaller;
+}
+
+#main-img {
+   max-width: 50%;
+   max-height: 60%;
 }
 
 #btn-container {

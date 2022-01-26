@@ -39,16 +39,16 @@ const Race = (props) => {
     
     
     return (
-        <div id='race-overview'>
+        <div id='overview'>
             <h3 id='race-name'>{name}</h3>
             <img src={img} alt='' id='race-img'/>
             <p id='race-description'>{description}</p>
             <div id='btn-container'>
                 <Link to={`/races/${name}`}>
-                    <button className='race-button'>MORE</button>
+                    <button className='main-button'>MORE</button>
                 </Link>
                 <Link to={'/classes'}>
-                    <button className ='race-button' onClick={submitRace}>SELECT</button>
+                    <button className ='main-button' onClick={submitRace}>SELECT</button>
                 </Link>
             </div>
         </div>       

@@ -1,3 +1,15 @@
 .App {
     background-color: #BFBDC1;
 }
+
+.main-button {
+    width: 5vw;
+    height: 3vh;
+    background-color: transparent;
+    color: #F7B32B;
+    border: none;
+    border-radius: 2.5px;
+    background-color: maroon;
+    font-weight: 200;
+    font-size: smaller;
+}

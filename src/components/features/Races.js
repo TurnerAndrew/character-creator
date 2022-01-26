@@ -19,7 +19,7 @@ const Races = () => {
         })
 
     return (
-        <div id='main-container'>
+        <div className='main-container'>
             {racesMapped}
         </div>
     )

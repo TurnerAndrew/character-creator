@@ -16,7 +16,7 @@ const Classes = () => {
            </div>
     })
 
-  return <div>
+  return <div className='main-container'>
             {classesMapped}
          </div>;
 };
