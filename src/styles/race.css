@@ -1,13 +1,15 @@
 #race-overview {
     width: 15vw;
-    height: 40vh;
+    height: 35vh;
     display: flex; 
     flex-direction: column; 
     justify-content: space-evenly;
     align-items: center;
-    border: solid 1px black;
     margin: 1.5vw;
     padding: 1.5vw;
+    background-color: lightgray;
+    border: solid #6D6A75 1px;
+    /* border-radius: 25px; */
 } 
 
 #race-description {
@@ -26,8 +28,9 @@
     width: 5vw;
     height: 3vh;
     background-color: transparent;
-    color: white;
-    border: solid 1px black;
+    color: #F7B32B;
+    border: none;
+    border-radius: 2.5px;
     background-color: maroon;
 }
 

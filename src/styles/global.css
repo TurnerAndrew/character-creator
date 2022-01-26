@@ -1,6 +1,15 @@
+/* colors
+Maroon #800000
+Black #0C0F0A
+Dark Gray #6D6A75
+Light Gray #BFBDC1
+Yellow #F7B32B */
+
+
 * {
     padding: 0;
     margin: 0;
     text-decoration: none;
+    /* display: flex; */
 }
 
