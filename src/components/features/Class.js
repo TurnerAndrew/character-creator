@@ -1,19 +1,23 @@
-import {Link} from 'react-router-dom'
+import { useState } from 'react'
+import { Link } from 'react-router-dom'
 import { connect } from 'react-redux'
 import { selectClass } from '../../redux/reducers/characterReducer'
+import axios from 'axios'
 
 const Class = (props) => {
 
-    const selectClass = () => { 
-        props.selectClass(props.details.name)
+    const { img, name, description } = props.details
+    const [hitDie, setHitDie] = useState('')
+
+    const selectClass = () => {
+        props.selectClass(name, hitDie)
     }
 
-    const { img, name, description } = props.details
 
     return (
         <div id='overview'>
             <h3 id='class-name'>{name}</h3>
-            <img src={img} alt='' id='main-img'/>
+            <img src={img} alt='' className='main-img'/>
             <p id='race-description'>{description}</p>
             <div id='btn-container'>
                 <Link to={`/classes/${name}`}>

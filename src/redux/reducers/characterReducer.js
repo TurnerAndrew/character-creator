@@ -2,7 +2,15 @@ const initialState = {
     race: null,
     class: null,
     background: null,
-    abilityScores: {},
+    abilityScores: {
+        str: 0,
+        dex: 0,
+        con: 0,
+        wis: 0,
+        int: 0,
+        cha: 0
+    },
+    hitDie: 0,
     stats: null,
     proficiencies: [],
     spells: null,
@@ -13,6 +21,7 @@ const SELECT_RACE = 'SELECT_RACE'
 const SELECT_CLASS = 'SELECT_CLASS'
 const SELECT_BACKGROUND = 'SELECT_BACKGROUND'
 const ADD_ABILITY_SCORES = 'SELECT_ABILITY_SCORES'
+const ADD_HIT_DIE = 'ADD_HIT_DIE'
 const SELECT_STATS = 'SELECT_STATS'
 const SELECT_PROFICIENCES = 'SELECT_PROFICIENCIES'
 const SELECT_SPELLS = 'SELECT_SPELLS'
@@ -25,10 +34,10 @@ export const selectRace = (race, abilityScores) => {
     }
 }
 
-export const selectClass = (race) => {
+export const selectClass = (job) => {
     return {
         type: SELECT_CLASS,
-        payload: race
+        payload: job,
     }
 }
 
@@ -43,12 +52,10 @@ const characterReducer = (state = initialState, action) => {
     switch(action.type){
         case SELECT_RACE:
             const race = action.payload
-            console.log({...state, race: race})
             return {...state, race: race}
         case ADD_ABILITY_SCORES:
-            const abilityScores = action.payload
-            console.log({...state, abilityScores: abilityScores})
-            return {...state, abilityScores: abilityScores}
+            const modifiers = action.payload
+            return {...state, abilityScores: {...state.abilityScores, ...modifiers}}
         case SELECT_CLASS:
             const job = action.payload
             console.log({...state, class: job})

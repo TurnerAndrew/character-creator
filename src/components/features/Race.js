@@ -41,7 +41,7 @@ const Race = (props) => {
     return (
         <div id='overview'>
             <h3 id='race-name'>{name}</h3>
-            <img src={img} alt='' id='race-img'/>
+            <img src={img} alt='' className='main-img'/>
             <p id='race-description'>{description}</p>
             <div id='btn-container'>
                 <Link to={`/races/${name}`}>

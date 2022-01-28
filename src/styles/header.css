@@ -20,6 +20,7 @@ ul {
     width: 80%;
     display: flex;
     justify-content: center;
+    padding-bottom: .5%;
 }
 
 #nav-list{
@@ -35,5 +36,7 @@ ul {
 }
 
 .nav-item {
-    margin-bottom: 1%;
+    font-family: 'Tiamat Condensed SC Regular';
+    color: #bfbdc1;
 }
+
