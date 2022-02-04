@@ -1,14 +1,14 @@
 import React, { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
 import { connect } from 'react-redux'
-import { selectRace, addAbilityScores } from '../../redux/reducers/characterReducer'
+import { selectRace, addModifiers } from '../../redux/reducers/characterReducer'
 
 import '../../styles/race.css'
 import axios from 'axios'
 
 const Race = (props) => {
 
-    const {img, name, description} = props.details
+    const { img, name, description } = props.details
     const [abilities, setAbilities] = useState([])
     const abilityScores = {}
 
@@ -28,13 +28,13 @@ const Race = (props) => {
        props.selectRace(props.details.name)
     }
 
-    const addAbilityScores = () => {
-        props.addAbilityScores(abilityScores)
+    const addModifiers = () => {
+        props.addModifiers(abilityScores)
     }
 
     const submitRace = () => {
         selectRace()
-        addAbilityScores()
+        addModifiers()
     }
     
     
@@ -64,4 +64,4 @@ const mapStateToProps = (state, ownProps) => {
     }
 }
 
-export default connect(mapStateToProps, { selectRace, addAbilityScores })(Race)
+export default connect(mapStateToProps, { selectRace, addModifiers })(Race)

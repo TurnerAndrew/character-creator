@@ -1,24 +1,27 @@
 import React from 'react';
-import { Link, useParams } from 'react-router-dom'
+import { Link, useLocation } from 'react-router-dom'
 
 import '../../styles/header.css'
 
 const Header = () => {
 
-  const location = useParams()
+  const usePathname = () => {
+    const location = useLocation()
+    return location.pathname
+  }
 
-  console.log(location)
+  const location = usePathname()
 
   return (
     <header id='header-main'>
         <nav id='main-nav'>
             <ul id='nav-list'>
                 {/* <li class='nav-item'>Home</li> */}
-                <Link to='/races'><li className='nav-item'>race</li></Link>            
-                <Link to='/classes'><li className='nav-item'>class</li></Link>
-                <li className='nav-item'>abilities</li>
-                <li className='nav-item'>background</li>
-                <li className='nav-item'>equipment</li>  
+                <Link to='/races'><li className={`nav-item ${location.includes('/races') ? 'location' : ''}`}>race</li></Link>            
+                <Link to='/classes'><li className={`nav-item ${location.includes('/classes') ? 'location' : ''}`}>class</li></Link>
+                <li className={`nav-item ${location === '/abilities' ? 'location' : ''}`}>abilities</li>
+                <li className={`nav-item ${location === '/background' ? 'location' : ''}`}>background</li>
+                <li className={`nav-item ${location === '/equipment' ? 'location' : ''}`}>equipment</li>  
             </ul>
         </nav>
     </header>

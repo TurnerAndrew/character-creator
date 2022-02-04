@@ -2,29 +2,53 @@ import axios from 'axios'
 import React, { useEffect, useState } from 'react'
 import {useParams, Link} from 'react-router-dom'
 import { connect } from 'react-redux'
-import { selectRace } from '../../redux/reducers/characterReducer'
+import { selectRace, addModifiers } from '../../redux/reducers/characterReducer'
 import Traits from './Traits'
 
 const RaceDetails = (props) => {
-    let {name} = useParams()
+    let { name } = useParams()
     let [details, setDetails] = useState({})
     let [img, setImg] = useState({})
-    
-    const selectRace = () => {
-        props.selectRace(name)
-    }
+    const [abilities, setAbilities] = useState([])
+    let abilityScores = {}
 
     useEffect(() => {
         axios.get(`https://www.dnd5eapi.co/api/races/${name.toLowerCase()}`)
-            .then(res => setDetails(res.data))
+        .then(res => setDetails(res.data))
+        axios.get(`https://www.dnd5eapi.co/api/races/${name.toLowerCase()}`)
+        .then(res => setAbilities(res.data.ability_bonuses))
         axios.get(`/api/races`)
-            .then(res => setImg(res.data.races.filter(race => race.name.toLowerCase() === name.toLowerCase())[0].img))
+        .then(res => setImg(res.data.races.filter(race => race.name.toLowerCase() === name.toLowerCase())[0].img))
     }, [])
+    
+    
+    abilities.forEach(ability => {
+        let score = ability.ability_score.index
+        let value = ability.bonus
+        abilityScores[score] = value
+    })
+  
+
+    const selectRace = () => {
+        props.selectRace(name.toLowerCase())
+     }
+ 
+     const addModifiers = () => {
+         props.addModifiers(abilityScores)
+     }
+ 
+     const submitRace = () => {
+         selectRace()
+         addModifiers()
+     }
+    
 
     
-    const { ability_bonuses : bonuses,
+    const {
+        ability_bonuses : bonuses,
         starting_proficiencies : proficiencies,
-        traits } = details
+        traits 
+        } = details
         
     
     let bonusesMapped
@@ -62,20 +86,20 @@ const RaceDetails = (props) => {
             {bonusesMapped}
             <br></br>
             <br></br>
-            <p>{details.age}</p>
+            <p className={'details'}>{details.age}</p>
             <br></br>
             <br></br>
-            <p>{details.alignment}</p>
+            <p className={'details'}>{details.alignment}</p>
             <br></br>
             <br></br>
-            <p>{details.size_description}</p>
+            <p className={'details'}>{details.size_description}</p>
             <br></br>
             <br></br>
             {proficienciesMapped}
             <br></br>
             <br></br>
             {/* {languagesMapped} */}
-            <p>{details.language_desc}</p>
+            <p className={'details'}>{details.language_desc}</p>
             <br></br>
             <br></br>
             {traitsMapped}
@@ -85,7 +109,7 @@ const RaceDetails = (props) => {
             <br></br>
             <br></br>
             <Link to='/classes'>
-            <button onClick={selectRace}>Select {name}</button>
+            <button onClick={submitRace}>Select {name}</button>
             </Link>
         </div>
     )
@@ -98,4 +122,4 @@ const mapStateToProps = (state, ownProps) => {
     }
 }
 
-export default connect(mapStateToProps, { selectRace })(RaceDetails)
+export default connect(mapStateToProps, { selectRace, addModifiers })(RaceDetails)
