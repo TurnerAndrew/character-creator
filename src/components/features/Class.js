@@ -1,8 +1,9 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
 import { connect } from 'react-redux'
 import { selectClass } from '../../redux/reducers/characterReducer'
 import axios from 'axios'
+
 
 const Class = (props) => {
 
@@ -12,6 +13,11 @@ const Class = (props) => {
     const selectClass = () => {
         props.selectClass(name, hitDie)
     }
+
+    useEffect(() => {
+        axios.get(`https://www.dnd5eapi.co/api/classes/${name.toLowerCase()}`)
+        .then(res => setHitDie(res.data.hit_die))
+    })
 
 
     return (

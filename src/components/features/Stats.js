@@ -9,14 +9,17 @@ const Stats = () => {
     const stats = useSelector(store => store.abilityScores)
     const hitDie = useSelector(store => store.hitDie)
 
+    const { str, dex, con, wis, int, cha } = stats
+
     return <div>
-        str: {stats.str}
-        dex: {stats.dex}
-        con: {stats.dex}
-        wis: {stats.wis}
-        int: {stats.wis}
-        cha: {stats.cha}
+        str: {str}
+        dex: {dex}
+        con: {con}
+        wis: {wis}
+        int: {wis}
+        cha: {cha}
         hit die: {hitDie}
+        hp: {hitDie + con}
     </div>;
 };
 

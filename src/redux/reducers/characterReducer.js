@@ -35,10 +35,10 @@ export const selectRace = (race, abilityScores) => {
     }
 }
 
-export const selectClass = (job) => {
+export const selectClass = (job, hitDie) => {
     return {
         type: SELECT_CLASS,
-        payload: job,
+        payload: {job: job, hitDie: hitDie}
     }
 }
 
@@ -69,9 +69,10 @@ const characterReducer = (state = initialState, action) => {
             const abilities = action.payload
             return {...state, abilityScores: {...abilities}}
         case SELECT_CLASS:
-            const job = action.payload
-            console.log({...state, class: job})
-            return {...state, class: job}
+            const job = action.payload.job
+            const hitDie = action.payload.hitDie 
+            console.log({...state, class: job, hitDie: hitDie})
+            return {...state, class: job, hitDie: hitDie}
         default:
             return state
     }
