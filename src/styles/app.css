@@ -13,3 +13,30 @@
     font-weight: 200;
     font-size: smaller;
 }
+
+#stats {
+    position: fixed;
+    background-color: #BFBDC1;
+    margin-top: 3vh;
+    padding-left: 1vw;
+    width: 5vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: flex-end;
+}
+
+.stats-main {
+    font-size: larger;
+    font-weight: 400;
+}
+
+.ability {
+    font-weight: 400;
+    font-size:large;
+    display: inline;
+}
+
+.stat-score {
+    font-weight: 100;
+}

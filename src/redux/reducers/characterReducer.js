@@ -71,7 +71,6 @@ const characterReducer = (state = initialState, action) => {
         case SELECT_CLASS:
             const job = action.payload.job
             const hitDie = action.payload.hitDie 
-            console.log({...state, class: job, hitDie: hitDie})
             return {...state, class: job, hitDie: hitDie}
         default:
             return state
