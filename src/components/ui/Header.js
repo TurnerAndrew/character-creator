@@ -19,7 +19,7 @@ const Header = () => {
                 {/* <li class='nav-item'>Home</li> */}
                 <Link to='/races'><li className={`nav-item ${location.includes('/races') ? 'location' : ''}`}>race</li></Link>            
                 <Link to='/classes'><li className={`nav-item ${location.includes('/classes') ? 'location' : ''}`}>class</li></Link>
-                <li className={`nav-item ${location === '/abilities' ? 'location' : ''}`}>abilities</li>
+                <Link to='/abilities'><li className={`nav-item ${location === '/abilities' ? 'location' : ''}`}>abilities</li></Link>
                 <li className={`nav-item ${location === '/background' ? 'location' : ''}`}>background</li>
                 <li className={`nav-item ${location === '/equipment' ? 'location' : ''}`}>equipment</li>  
             </ul>
