@@ -10,9 +10,7 @@ const Abilities = () => {
         axios.get('/api/abilities')
         .then(res => setAbilities(res.data))
             console.log(abilities)
-        }, [])
-
-    
+        }, [])    
         
         return (
             <div>Abilities</div>
