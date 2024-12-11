@@ -15,7 +15,7 @@
 }
 
 #stats {
-    position: fixed;
+    /* position: fixed; */
     background-color: #BFBDC1;
     margin-top: 3vh;
     padding-left: 1vw;

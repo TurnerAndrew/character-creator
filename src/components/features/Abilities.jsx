@@ -1,19 +1,28 @@
-import React, { useEffect, useMemo, useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import axios from 'axios'
-import Class from './Class'
 
 const Abilities = () => {
 
     const [ abilities, setAbilities ] = useState([])
 
     useEffect(() => {
-        axios.get('/api/abilities')
-        .then(res => setAbilities(res.data))
-            console.log(abilities)
-        }, [])    
+        axios.get('/api/abilities').then(res => setAbilities(res.data.abilities))
+        }, [])
         
+    console.log(abilities)
+        
+    const abilitiesMapped = abilities.map(ability => {
         return (
-            <div>Abilities</div>
+            <div key={ability.index} className='main-container'>
+                {ability.name}
+            </div>
+        )
+    })
+            
+        return (
+            <div>
+                {abilitiesMapped}
+            </div>
         )
     }
 
