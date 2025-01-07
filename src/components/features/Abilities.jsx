@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import axios from 'axios'
+import AbilityDetails from './AbilityDetails'
 
 const Abilities = () => {
 
@@ -7,15 +8,13 @@ const Abilities = () => {
 
     useEffect(() => {
         axios.get('/api/abilities').then(res => setAbilities(res.data.abilities))
-        }, [])
-        
-    console.log(abilities)
-        
+        }, []);
+                
     const abilitiesMapped = abilities.map(ability => {
         return (
-            <div key={ability.index} className='main-container'>
+            <AbilityDetails key={ability.index} url={ability.url} className='main-container'>
                 {ability.name}
-            </div>
+            </AbilityDetails>
         )
     })
             

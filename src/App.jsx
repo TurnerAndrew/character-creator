@@ -8,8 +8,10 @@ function App() {
   return (
     <div className="App">
       <Header/>
-      <Stats id='stats'/>
-      {Routes}
+      <body id="content">
+        <Stats id='stats'/>
+        {Routes}
+      </body>
     </div>
   );
 }

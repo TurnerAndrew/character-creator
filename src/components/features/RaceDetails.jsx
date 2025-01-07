@@ -4,6 +4,7 @@ import {useParams, Link} from 'react-router-dom'
 import { connect } from 'react-redux'
 import { selectRace, addModifiers } from '../../redux/reducers/characterReducer'
 import Traits from './Traits'
+import '../../styles/RaceDetails.css'
 
 const RaceDetails = (props) => {
     let { name } = useParams()
@@ -42,8 +43,6 @@ const RaceDetails = (props) => {
          addModifiers()
      }
     
-
-    
     const {
         ability_bonuses : bonuses,
         starting_proficiencies : proficiencies,
@@ -76,9 +75,12 @@ const RaceDetails = (props) => {
 
 
     return (
-        <div>
-            <h1>{details.name}</h1>
-            <br></br>
+        <div id='race-details'>
+        <div id="img-container">
+            <img src={img}/>
+        </div>
+        <div id="detail-content">
+            <h1>{details.name}</h1>            
             <br></br>
             <p>Movement Speed: {details.speed}</p>
             <br></br>
@@ -105,12 +107,12 @@ const RaceDetails = (props) => {
             {traitsMapped}
             <br></br>
             <br></br>
-            <img src={img}/>
             <br></br>
             <br></br>
             <Link to='/classes'>
             <button onClick={submitRace}>Select {name}</button>
             </Link>
+        </div>
         </div>
     )
 }

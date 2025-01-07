@@ -1,9 +1,10 @@
 import React from 'react';
-import { Link } from 'react-router-dom'
+import Routes from '../Routes'
+import Stats from './features/Stats';
 
 const Main = () => {
   return <div>
-      <Link to={'/races'}>Begin</Link>
+      Main Page
   </div>;
 };
 
