@@ -1,16 +1,21 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
+import { createRoot } from 'react-dom/client';
+import {HeroUIProvider} from '@heroui/react'
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { HashRouter } from 'react-router-dom';
 import { Provider } from 'react-redux'
 import store from './redux/store'
 
-ReactDOM.render(
+const root = createRoot(document.getElementById('root'));
+
+root.render(
   <React.StrictMode>
     <Provider store={store}>
       <HashRouter>
-        <App />
+        <HeroUIProvider>
+          <App />
+        </HeroUIProvider>
       </HashRouter>
     </Provider>
   </React.StrictMode>,

@@ -1,18 +1,15 @@
-const races = require('../races.json')
-const classes = require('../classes.json')
-const abilities = require('../abilities.json')
+import races from '../races.json' with { type: 'json'}
+import classes from '../classes.json' with { type: 'json'}
+import abilities from '../abilities.json' with { type: 'json'}
 
-module.exports = {
-
-    getRaces: (req, res) => {
+export function getRaces(req, res) {
         res.status(200).send(races)
-    },
+    }
 
-    getClasses: (req, res) => {
+export function getClasses(req, res) {
         res.status(200).send(classes)
-    },
+    }
     
-    getAbilities: (req, res) => {
+export function getAbilities(req, res) {
         res.status(200).send(abilities)
     }
-}

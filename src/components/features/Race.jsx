@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
 import { connect } from 'react-redux'
 import { selectRace, addModifiers } from '../../redux/reducers/characterReducer'
+import {Button, ButtonGroup} from "@heroui/button";
 
 import '../../styles/race.css'
 import axios from 'axios'
@@ -43,14 +44,14 @@ const Race = (props) => {
             <h3 id='race-name'>{name}</h3>
             <img src={img} alt='' className='main-img'/>
             <p id='race-description'>{description}</p>
-            <div id='btn-container'>
+            <ButtonGroup id='btn-container'>
                 <Link to={`/races/${name}`}>
-                    <button className='main-button'>MORE</button>
+                    <Button color="danger">MORE</Button>
                 </Link>
                 <Link to={'/classes'}>
                     <button className ='main-button' onClick={submitRace}>SELECT</button>
                 </Link>
-            </div>
+            </ButtonGroup>
         </div>       
     )
 }

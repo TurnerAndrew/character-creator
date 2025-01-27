@@ -5,13 +5,13 @@ import Stats from './components/features/Stats'
 import './styles/app.css'
 
 function App() {
-  return (
+  return (   
     <div className="App">
       <Header/>
-      <body id="content">
+      <div id="content">
         <Stats id='stats'/>
         {Routes}
-      </body>
+      </div>
     </div>
   );
 }

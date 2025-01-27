@@ -1,9 +1,9 @@
 //REQUIREMENTS
-const express = require('express')
-const cors = require('cors')
+import express from 'express';
+import cors from 'cors'
 
 //HANDLER FUNCTIONS
-const { getRaces, getClasses, getAbilities } = require('./controllers/raceController')
+import { getRaces, getClasses, getAbilities } from './controllers/raceController.js'
 
 //INVOCATIONS
 const app = express()
